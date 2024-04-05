@@ -68,10 +68,10 @@ $("#searchBtn").click(async function () {
         fetch(suggestion_api).then(res => res.json()).then(data => {
             let suggestion_video_1=data['items'][0]['id']['videoId'];
             const suggestionUrl_1=`https://www.youtube.com/${suggestion_video_1}`;
-            document.getElementById('suggestionUrl_1').src=suggestionUrl_1;            
+            document.getElementById('suggestionUrl_1').href=suggestionUrl_1;            
             fetch(video_1_url).then(res => res.json()).then(data => {
                 let video_1_title=data['items'][0]['snippet']['title'];
-                $('#video_title_1').text(title);
+                $('#video_title_1').text(video_1_title);
             })
         })
     })
