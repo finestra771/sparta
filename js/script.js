@@ -67,6 +67,7 @@ $("#searchBtn").click(async function () {
         let suggestion_api = `https://www.googleapis.com/youtube/v3/search?key=AIzaSyAIyGyJLimC1Oo9r8_bNWQBVwsLndCsDLk&q=${title}`;
         fetch(suggestion_api).then(res => res.json()).then(data => {
             let suggestion_video_1 = data['items'][0]['id']['videoId'];
+            console.log(suggestion_video_1);
             const suggestionUrl_1 = `https://www.youtube.com/${suggestion_video_1}`;
             console.log(suggestionUrl_1);
             document.getElementById('video_title_1').href = suggestionUrl_1;
